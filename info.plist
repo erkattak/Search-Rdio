@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>background</key>
+	<true/>
+	<key>category</key>
+	<string>APPLESCRIPTS</string>
+	<key>command</key>
+	<string>on ApplicationIsRunning(appName)	tell application "System Events" to set appNameIsRunning to exists (processes where name is appName)	return appNameIsRunningend ApplicationIsRunning
+
+on alfred_script(q)
+	set theURL to "http://www.rdio.com/#/search/" &amp; q	if ApplicationIsRunning("Rdio") is false then		do shell script "open -a Rdio"		delay 5	end if	tell application "Rdio"
+		activate		open location theURL	end tell
+end alfred_script</string>
+	<key>keyword</key>
+	<string>rd</string>
+	<key>subtitle</key>
+	<string>Search Rdio for Artist/Album/Song</string>
+	<key>title</key>
+	<string>Rdio Search</string>
+</dict>
+</plist>
