@@ -1,4 +1,4 @@
-# Alexa Rank
+# Search Rdio
 
 A simple [Alfred](http://alfredapp.com) extension to search for artists on the Rdio OS X app.
 
